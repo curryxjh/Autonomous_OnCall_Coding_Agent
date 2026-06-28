@@ -1,7 +1,7 @@
 package dao
 
 type User struct {
-	ID        string `gorm:"type:char(36);primaryKey;comment:用户ID" json:"id"`
+	ID        int64  `gorm:"primaryKey;autoIncrement;comment:用户ID" json:"id"`
 	Username  string `gorm:"size:64;not null;uniqueIndex:idx_user_username;comment:用户名" json:"username"`
 	Email     string `gorm:"size:128;not null;uniqueIndex:idx_user_email;comment:邮箱" json:"email"`
 	Password  string `gorm:"size:255;not null;comment:密码" json:"-"`
